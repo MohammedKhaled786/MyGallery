@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/imageFilter.css">
+    <script src="./javascript/imageFilter.js"></script>
+</head>
+<body>
+    <!-- below code for gallery -->
+    <div id="gallery">
+        <div id="galleryTextContainer"><span id="galleryText">My Gallery</span></div>
+        <div id="galleryContainer">
+            <div id="a" class="galleryImageContainer"><img class="galleryImage" src="asset/images/1.jpg" alt=""></div>
+            <div id="b" class="galleryImageContainer"><img class="galleryImage" src="asset/images/2.jpg" alt=""></div>
+            <div id="c" class="galleryImageContainer"><img class="galleryImage" src="asset/images/3.jpg" alt=""></div>
+            <div id="d" class="galleryImageContainer"><img class="galleryImage" src="asset/images/4.jpg" alt=""></div>
+            <div id="e" class="galleryImageContainer"><img class="galleryImage" src="asset/images/5.jpg" alt=""></div>
+            <div id="f" class="galleryImageContainer"><img class="galleryImage" src="asset/images/6.jpg" alt=""></div>
+            <div id="g" class="galleryImageContainer"><img class="galleryImage" src="asset/images/7.jpg" alt=""></div>
+            <div id="h" class="galleryImageContainer"><img class="galleryImage" src="asset/images/8.jpg" alt=""></div>
+            <div id="i" class="galleryImageContainer"><img class="galleryImage" src="asset/images/9.jpg" alt=""></div>
+            <div id="j" class="galleryImageContainer"><img class="galleryImage" src="asset/images/10.jpg" alt=""></div>
+            <div id="k" class="galleryImageContainer"><img class="galleryImage" src="asset/images/11.jpg" alt=""></div>
+            <div id="l" class="galleryImageContainer"><img class="galleryImage" src="asset/images/12.jpg" alt=""></div>
+        </div>
+    </div>
+
+
+    <!-- onclickImageWindow code-->
+    <!-- <div id="onclickImageWindow">
+        
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Below code is for editing -->
+    <div id="mainContainer">
+        <div id="imageContainer">
+            <img src="asset/images/lake.jpg" alt="" id="image">
+        </div>
+        <div id="imageEditContainer">
+            <div id="filtering">
+                <h2 id="filterName">Filter</h2>
+                <div class="filterOption">
+                    <label for=""><p>Blur(<span id="displayBlurValue">0</span><span>px</span>)</p></label>
+                    <input type="range" min="0" max="100" value="0" id="blur" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Brightness(<span id="displayBrightnessValue">100</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="200" value="100" id="brightness" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Contrast(<span id="displayContrastValue">100</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="500" value="100" id="contrast" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>GrayScale(<span id="displayGrayScaleValue">0</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="100" value="0" id="grayscale" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Hue-rotate(<span id="displayHuerotateValue">0</span><span>deg</span>)</p></label>
+                    <input type="range" min="0" max="360" value="0" id="huerotate" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Invert(<span id="displayInvertValue">0</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="100" value="0" id="invert" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Opacity(<span id="displayOpacityValue">100</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="100" value="100" id="opacity" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Saturate(<span id="displaySaturateValue">100</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="500" value="100" id="saturate" oninput="editImage()">
+                </div>
+                <div class="filterOption">
+                    <label for=""><p>Sepia(<span id="displaySepiaValue">0</span><span>%</span>)</p></label>
+                    <input type="range" min="0" max="100" value="0" id="sepia" oninput="editImage()">
+                </div>
+            </div>
+            <div id="transforming">
+                <h2 id="transformName">Transform</h2>
+                <div class="transformOption">
+                    <label for=""><p>rotateZ(<span id="displayRotateZValue"></span>)</p></label>
+                    <input type="range" min="0" max="360" value="0" id="rotatez" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>rotateX(<span id="displayRotateXValue"></span>)</p></label>
+                    <input type="range" min="0" max="360" value="0" id="rotatex" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>rotateY(<span id="displayRotateYValue"></span>)</p></label>
+                    <input type="range" min="0" max="360" value="0" id="rotatey" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>scaleX(<span id="displayScaleXValue"></span>)</p></label>
+                    <input type="range" min="0.0" max="3.0" value="1.0" id="scalex" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>scaleY(<span id="displayScaleYValue"></span>)</p></label>
+                    <input type="range" min="0" max="3" value="1" id="scaley" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>translateX(<span id="displayTranslateXValue"></span>)</p></label>
+                    <input type="range" min="-300" max="360" value="0" id="translatex" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>translateY(<span id="displayTranslateYValue"></span>)</p></label>
+                    <input type="range" min="-300" max="360" value="0" id="translatey" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>skewX(<span id="displaySkewXValue"></span>)</p></label>
+                    <input type="range" min="0" max="360" value="0" id="skewx" oninput="editImage()">
+                </div>
+                <div class="transformOption">
+                    <label for=""><p>skewY(<span id="displaySkewYValue"></span>)</p></label>
+                    <input type="range" min="0" max="360" value="0" id="skewy" oninput="editImage()">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
